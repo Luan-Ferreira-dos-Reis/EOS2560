@@ -4,10 +4,10 @@
 #include <conio.h>
 #include<time.h>
 #include<Windows.h>
+#include<stdbool.h>
 
 //arquivos de cabeçalho
 #include "tarefa.h"
-#include "recursos.h"
 #include "semaforo.h"
 
 // assinatura de inicialização de SO
@@ -21,33 +21,32 @@ void codigoTarefa4();
 
 
 int main(void){
-	//criação das tarefas	
-	//tn = criarTarefa(ptrFunc Xcodigo, char *Xnome, int Xperiodo, int Xhabilitacao, int Xprioridade);	
 	Tarefa t1, t2, t3, t4;
-	Tarefa *ptrT1, *ptrT2, *ptrT3, *ptrT4;
+	criarTarefa(codigoTarefa1, "tarefa 1", 10, 2, &t1);			 										 	 								
+	criarTarefa(codigoTarefa2, "tarefa 2", 20, 1, &t2);		
+	criarTarefa(codigoTarefa3, "tarefa 3", 15, 1, &t3);	
+	criarTarefa(codigoTarefa4, "tarefa 4", 5, 1, &t4);	
 	
+	Semaforo s1;
+	criarSemaforo(&s1);	
 	
-	Tarefa *ptrT1 = criarTarefa(codigoTarefa1, "tarefa 1", 10, 1, 1);	
-	impressora(t1 -> codigo);
-				 										 	 								
-	Tarefa *ptrT2 = criarTarefa(codigoTarefa2, "tarefa 2", 10, 1, 1);	
-	impressora(t2 -> codigo);
-		
-	Tarefa *ptrT3 = criarTarefa(codigoTarefa3, "tarefa 3", 10, 1, 1);
-	impressora(t3 -> codigo);
-			
-	Tarefa *ptrT4 = criarTarefa(codigoTarefa4, "tarefa 4", 10, 1, 1);	
-	impressora(t4 -> codigo);	
-		
+	obterSemaforo(&s1, &t1);	 	
+	iniciarSemaforo(&s1);
+	liberarSemaforo(&s1);
 	
-	impressora(t3 -> codigo);
+	obterSemaforo(&s1, &t2);	 	
+	iniciarSemaforo(&s1);
+	liberarSemaforo(&s1);
 	
+	obterSemaforo(&s1, &t3);	 	
+	iniciarSemaforo(&s1);
+	liberarSemaforo(&s1);
 	
+	obterSemaforo(&s1, &t4);	 	
+	iniciarSemaforo(&s1);
+	liberarSemaforo(&s1);
 	
-	
-		
-	return 0;
-	
+	return 0;	
 }
 
 

@@ -6,15 +6,21 @@
 #include <string.h>
 
 #include "tarefa.h"
-#include "recursos.h"
 
-#define MAX_TAREFAS  4
 
-typedef void(*ptrRecurso)();  // estrutura do semáforo que gerencia uso de um recurso
+// ponteiro da função
+typedef void(*ptrFunc)(); 
 
+// estrutura de criação dos semáforos
 typedef struct{
-	ptrRecurso *recurso; 
+	int ocupado;  
+	Tarefa *tarefaExecucao; 
 }Semaforo;
 
-void iniciaSemaforo(Semaforo s, Tarefa ts);
+// funções relacionadas ao uso de semáforos
+void criarSemaforo(Semaforo *s);
+void obterSemaforo(Semaforo *s, Tarefa *t);
+void liberarSemaforo(Semaforo *s);
+void iniciarSemaforo(Semaforo *s);
+
 #endif
