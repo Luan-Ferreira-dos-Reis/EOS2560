@@ -13,7 +13,7 @@ void obterSemaforo(Semaforo *s, Tarefa *t){
 		s->tarefaExecucao = t;
 	}
 	else{
-		if (t->prioridade > s->tarefaExecucao->prioridade){
+		if (t->prioridade < s->tarefaExecucao->prioridade){  // se é prioritário em relação a que ja está em execução a tarefa toma o semáforo
 		s->tarefaExecucao = t;
 		}
 	}
@@ -34,6 +34,7 @@ void iniciarSemaforo(Semaforo *s){
 			s->tarefaExecucao->codigo();
 			tempo--;
 		}	
+		s->ocupado = 0;
 	}
 
 }
