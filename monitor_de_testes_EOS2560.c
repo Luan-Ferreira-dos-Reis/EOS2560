@@ -28,32 +28,16 @@ int main(void){
 	criarTarefa(codigoTarefa2, "tarefa 2", 20, 1, &t2);		
 	criarTarefa(codigoTarefa3, "tarefa 3", 15, 3, &t3);	
 	criarTarefa(codigoTarefa4, "tarefa 4", 05, 1, &t4);
-	Tarefa buffer[4] = {t1,t2,t3,t4};
+	Tarefa pilha[4] = {t1,t2,t3,t4};
+	int numTarefas = 4;
 	
 	Semaforo s1;
 	criarSemaforo(&s1);
 	
 	iniciaEOS2560();
-	escalonador(&s1, &buffer, 4);
-/*
+
+	escalonador(&s1, pilha, numTarefas);
 	
-	
-	obterSemaforo(&s1, &t1);
-	iniciarSemaforo(&s1);
-	liberarSemaforo(&s1);
-	
-	obterSemaforo(&s1, &t2);
-	iniciarSemaforo(&s1);
-	liberarSemaforo(&s1);
-	
-	obterSemaforo(&s1, &t3);
-	iniciarSemaforo(&s1);
-	liberarSemaforo(&s1);
-	
-	obterSemaforo(&s1, &t4);
-	iniciarSemaforo(&s1);
-	liberarSemaforo(&s1);
-*/	
 	return 0;	
 }
 

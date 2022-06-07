@@ -9,6 +9,6 @@
 #include "fila.h"
 
 void iniciaEOS2560();
-void escalonador(Semaforo *s, Tarefa *ts, int numTarefas);
+void escalonador(Semaforo *s, Tarefa pilha[], int numTarefas);
 
 #endif
