@@ -23,6 +23,7 @@ void obterSemaforo(Semaforo *s, Tarefa *t){
 void liberarSemaforo(Semaforo *s){
 	if (s->ocupado == 1){
 		s->ocupado = 0;
+		free(s->tarefaExecucao);
 	}
 }
 

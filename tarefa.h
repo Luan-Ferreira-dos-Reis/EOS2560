@@ -10,13 +10,13 @@ typedef void(*ptrFunc)();
 
 // estrutura para criação de tarefas
 typedef struct{
-  ptrFunc codigo;             // código da tarefa
   char *nome;                 // nome da tarefa
+  ptrFunc codigo;             // código da tarefa
   int periodo;                // periodo disponível de execução 
   int prioridade              // nível de prioridade
 }Tarefa;
 
 // assinatura de funções
-void criarTarefa(ptrFunc Xcodigo, char *Xnome, int Xperiodo, int Xprioridade, Tarefa *novaTarefa);
+void criarTarefa( ptrFunc Xcodigo, char *Xnome, int Xperiodo, int Xprioridade, Tarefa *novaTarefa);
 
 #endif
