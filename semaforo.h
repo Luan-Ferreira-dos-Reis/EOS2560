@@ -1,9 +1,10 @@
 #ifndef SEMAFORO_H
 #define SEMAFORO_H
 
+#include<stdbool.h>
 // estrutura de criação dos semáforos
 typedef struct{
-	int ocupado;   // status do semáforo
+	bool ocupado;   // status do semáforo
 }Semaforo;
 
 // funções relacionadas ao uso de semáforos

@@ -20,6 +20,8 @@ void codigoTarefa1(void *arg);
 void codigoTarefa2(void *arg);
 void codigoTarefa3(void *arg);
 
+
+
 int main(void){
 	Tarefa t0, t1, t2, t3;
 	
@@ -31,7 +33,8 @@ int main(void){
 	Tarefa pilha[4] = {t0,t1,t2,t3};
 	
 	iniciaEOS2560(pilha, 4);
-	
+	Semaforo imprimir;
+	criarSemaforo(&imprimir);
 	return 0;	
 }
 
