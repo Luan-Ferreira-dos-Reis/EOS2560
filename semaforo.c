@@ -1,9 +1,6 @@
 #include "semaforo.h"
 #include "tarefa.h" 
 
-#include "semaforo.h"
-#include "tarefa.h" 
-
 // funções para criar semáforo
 void criarSemaforo(Semaforo *s){
 	s->ocupado = 0;
