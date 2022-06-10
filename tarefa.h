@@ -6,7 +6,7 @@
 #include <string.h>
 
 // ponteiro da função
-typedef void(*ptrFunc)(); 
+typedef void(*ptrFunc)(void *arg); 
 
 // estrutura para criação de tarefas
 typedef struct{

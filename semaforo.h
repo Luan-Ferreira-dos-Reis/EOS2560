@@ -8,20 +8,14 @@
 
 #include "tarefa.h"
 
-
-// ponteiro da função
-typedef void(*ptrFunc)(); 
-
 // estrutura de criação dos semáforos
 typedef struct{
-	int ocupado;  
-	Tarefa *tarefaExecucao; 
+	int ocupado;   // status do semáforo
 }Semaforo;
 
 // funções relacionadas ao uso de semáforos
 void criarSemaforo(Semaforo *s);
-void obterSemaforo(Semaforo *s, Tarefa *t);
+void obterSemaforo(Semaforo *s);
 void liberarSemaforo(Semaforo *s);
-void iniciarSemaforo(Semaforo *s);
 
 #endif
