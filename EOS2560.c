@@ -2,21 +2,17 @@
 
 #include "EOS2560.h"
 
-void iniciaEOS2560(){
+void iniciaEOS2560(Tarefa pilha[], int numTarefas){
+	pthread_t threads[numTarefas];
 	printf("iniciando sistema...\n");
-}
-
-void escalonador(Semaforo *s, Tarefa pilha[], int numTarefas){
-	
 	int i;
-	for (int i = 0; i < numTarefas; i++){
-		obterSemaforo(s);
-		printf("tarefa %s obteve semaforo\n", pilha[i].nome);
-		s->recurso(pilha[i].codigo);
-		liberarSemaforo(s);
-		printf("tarefa %s liberou semaforo\n", pilha[i].nome);
+	for(i = 0; i < numTarefas; i++){
+		pthread_create(&(threads[i]), NULL, pilha[i].codigo, NULL);
 	}
 	
-
+	for(i = 0; i < numTarefas; i++){
+		pthread_join(threads[i], NULL);
+	}
 }
+
 

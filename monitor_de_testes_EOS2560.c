@@ -15,12 +15,10 @@
 #include "fila.h"
 
 // assinatura das tarefas implementadas
-void *codigoTarefa0(void *arg);
-void *codigoTarefa1(void *arg);
-void *codigoTarefa2(void *arg);
-void *codigoTarefa3(void *arg);
-
-pthread_t threads[4];
+void codigoTarefa0(void *arg);
+void codigoTarefa1(void *arg);
+void codigoTarefa2(void *arg);
+void codigoTarefa3(void *arg);
 
 int main(void){
 	Tarefa t0, t1, t2, t3;
@@ -32,22 +30,12 @@ int main(void){
 
 	Tarefa pilha[4] = {t0,t1,t2,t3};
 	
-	pthread_create(&(threads[0]), NULL, codigoTarefa0, NULL);
-	pthread_create(&(threads[1]), NULL, codigoTarefa1, NULL);
-	pthread_create(&(threads[2]), NULL, codigoTarefa2, NULL);
-	pthread_create(&(threads[3]), NULL, codigoTarefa3, NULL);
+	iniciaEOS2560(pilha, 4);
 	
-	pthread_join(threads[0], NULL);
-	pthread_join(threads[1], NULL);
-	pthread_join(threads[2], NULL);
-	pthread_join(threads[3], NULL);
-
-	
-
 	return 0;	
 }
 
-void *codigoTarefa0(void *arg){
+void codigoTarefa0(void *arg){
 	while(1){
 		printf("executando Tarefa 0\n");
 		Sleep(500);
@@ -55,21 +43,21 @@ void *codigoTarefa0(void *arg){
 }
 
 // código das tarefas
-void *codigoTarefa1(void *arg){
+void codigoTarefa1(void *arg){
 	while(1){
 		printf("executando Tarefa 1\n");
 		Sleep(500);
 	}	
 }
 
-void *codigoTarefa2(void *arg){
+void codigoTarefa2(void *arg){
 	while(1){
 		printf("executando Tarefa 2\n");
 		Sleep(500);
 	}
 }
 
-void *codigoTarefa3(void *arg){
+void codigoTarefa3(void *arg){
 	while(1){
 		printf("executando Tarefa 3\n");
 		Sleep(500);

@@ -1,6 +1,7 @@
 #ifndef EOS2560
 #define EOS2560
 
+#include<pthread.h>
 #include <time.h>
 
 #include "tarefa.h"
@@ -8,7 +9,7 @@
 #include "temporizador.h"
 #include "fila.h"
 
-void iniciaEOS2560();
-void escalonador(Semaforo *s, Tarefa pilha[], int numTarefas);
+void iniciaEOS2560(Tarefa pilha[], int numTarefas);
+
 
 #endif
