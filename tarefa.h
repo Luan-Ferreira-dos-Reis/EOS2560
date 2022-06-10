@@ -13,7 +13,7 @@ typedef struct{
   char *nome;                 // nome da tarefa
   ptrFunc codigo;             // código da tarefa
   int periodo;                // periodo disponível de execução 
-  int prioridade              // nível de prioridade
+  int prioridade              // nível de prioridade(quanto menor mais prioritário)
 }Tarefa;
 
 // assinatura de funções

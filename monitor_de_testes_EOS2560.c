@@ -26,8 +26,8 @@ int main(void){
 	Tarefa t1, t2, t3, t4;
 	criarTarefa(codigoTarefa1, "tarefa 1",  10, 2, &t1);			 										 	 								
 	criarTarefa(codigoTarefa2, "tarefa 2", 20, 1, &t2);		
-	criarTarefa(codigoTarefa3, "tarefa 3", 15, 3, &t3);	
-	criarTarefa(codigoTarefa4, "tarefa 4", 05, 1, &t4);
+	criarTarefa(codigoTarefa3, "tarefa 3", 50, 3, &t3);	
+	criarTarefa(codigoTarefa4, "tarefa 4", 50, 1, &t4);
 	Tarefa pilha[4] = {t1,t2,t3,t4};
 	int numTarefas = 4;
 	

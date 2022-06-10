@@ -7,7 +7,7 @@ void iniciaEOS2560(){
 }
 
 void escalonador(Semaforo *s, Tarefa pilha[], int numTarefas){
-	time_t inicio = time(NULL);
+	
 	int i;
 	for (int i = 0; i < numTarefas; i++){
 		obterSemaforo(s, &pilha[i]);
@@ -15,6 +15,6 @@ void escalonador(Semaforo *s, Tarefa pilha[], int numTarefas){
 		liberarSemaforo(s);
 	}
 	
-	time_t atual = time(NULL) - inicio;
+
 }
 

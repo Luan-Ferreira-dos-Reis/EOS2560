@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = monitor_de_testes_EOS2560.o tarefa.o semaforo.o fila.o temporizador.o EOS2560.o
-LINKOBJ  = monitor_de_testes_EOS2560.o tarefa.o semaforo.o fila.o temporizador.o EOS2560.o
+OBJ      = monitor_de_testes_EOS2560.o tarefa.o semaforo.o fila.o temporizador.o EOS2560.o recurso.o
+LINKOBJ  = monitor_de_testes_EOS2560.o tarefa.o semaforo.o fila.o temporizador.o EOS2560.o recurso.o
 LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
 CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
@@ -41,3 +41,6 @@ temporizador.o: temporizador.c
 
 EOS2560.o: EOS2560.c
 	$(CC) -c EOS2560.c -o EOS2560.o $(CFLAGS)
+
+recurso.o: recurso.c
+	$(CC) -c recurso.c -o recurso.o $(CFLAGS)
